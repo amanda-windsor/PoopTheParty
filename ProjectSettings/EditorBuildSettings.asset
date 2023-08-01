@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 78bb09e1069df84468152c2df482eec7
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 7969b7a8aab67f348907b7055bed1818
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 500495bdaee978d40b038e6fe6eec286
+  - enabled: 1
+    path: Assets/Scenes/LairSweetLair.unity
+    guid: 38f477f67fcc7a941bc44ef6d011c895
   - enabled: 1
     path: Assets/Scenes/BouncyParty.unity
     guid: ace4effab9288224da57743453adff2d
