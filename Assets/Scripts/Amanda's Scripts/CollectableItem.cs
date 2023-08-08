@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CollectableItem : MonoBehaviour
+namespace PoopTheParty
 {
+
+    public class CollectableItem : MonoBehaviour
+    {/*
     public enum RarityLevel
     {
         Common,
@@ -27,9 +31,22 @@ public class CollectableItem : MonoBehaviour
         }
     }
 
+    private void OnClick(gameObject);
+    {
+            // Add the item to the player's inventory
+            AddToInventory();
+
+            // Destroy the item in the game world
+            Destroy(gameObject);
+        }
+    
+
     private void AddToInventory()
     {
         // Add the item to the player's inventory
-        // You can implement your own inventory system or use Unity's built-in Inventory system
+        PlayerInventory.AddItem(this.gameObject);
+
+    }
+*/
     }
 }

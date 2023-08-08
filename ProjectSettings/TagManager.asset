@@ -10,6 +10,10 @@ TagManager:
   - UI
   - Damage
   - Bullet
+  - Treasure
+  - Currency
+  - Destructible
+  - Tool
   layers:
   - Default
   - TransparentFX
