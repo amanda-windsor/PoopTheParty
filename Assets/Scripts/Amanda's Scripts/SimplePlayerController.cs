@@ -27,7 +27,6 @@ namespace Controllers
             Restart();
             if (alive)
             {
-                Hurt();
                 Attack();
                 Jump();
                 Run();
@@ -92,17 +91,6 @@ namespace Controllers
             if (Input.GetMouseButtonDown(0))
             {
                 anim.SetTrigger("Attack");
-            }
-        }
-        void Hurt()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                anim.SetTrigger("hurt");
-                if (direction == 1)
-                    rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
-                else
-                    rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
             }
         }
         

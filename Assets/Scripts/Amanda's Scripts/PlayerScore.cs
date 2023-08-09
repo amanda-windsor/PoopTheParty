@@ -2,14 +2,12 @@ using UnityEngine;
 
 namespace PlayerScoreSystem {
 
-    public class PlayerScore {
-
-    
+    public class PlayerScore : MonoBehaviour {
 
     // Variable for Villain Point total
-    int villainPointCount = 0;
+    public int villainPointCount = 0;
     // Variable for Current Party Score
-    int currentPartyScore = 0;
+    public int currentPartyScore = 0;
     
     }
 }
