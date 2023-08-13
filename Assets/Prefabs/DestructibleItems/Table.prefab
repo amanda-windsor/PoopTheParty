@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f7a0e6cb9e8610c46911814f5efbe462, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 499d0fccf561f6649bf32f86e9bb4afd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.02, y: 6.86}
+  m_Size: {x: 13.03, y: 6.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -124,8 +124,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 6.86}
-    newSize: {x: 13.02, y: 6.86}
+    oldSize: {x: 13.03, y: 6.86}
+    newSize: {x: 13.03, y: 6.86}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -189,4 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c4adaf25c56477b836b81ad48e3bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
   pointsWorth: 10
+  deathEffectPrefab: {fileID: 0}
