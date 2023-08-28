@@ -5,9 +5,12 @@ using static HealthSystemAttribute;
 [AddComponentMenu("Playground/Attributes/Destroy For Points")]
 public class DestroyForPointsAttribute : MonoBehaviour
 {
+	// List of item prefabs to spawn
+    public GameObject[] itemPrefabs;
 	public int health = 20;
 	public int pointsWorth = 1;
     public GameObject deathEffectPrefab;
+	
 
     private UIScript userInterface;
 
@@ -17,9 +20,18 @@ public class DestroyForPointsAttribute : MonoBehaviour
 		userInterface = GameObject.FindObjectOfType<UIScript>();
 	}
 
+    private void SpawnRandomItem()
+    {
+        if (itemPrefabs.Length > 0)
+        {
+            int randomIndex = Random.Range(0, itemPrefabs.Length);
+            GameObject randomItemPrefab = itemPrefabs[randomIndex];
+            Instantiate(randomItemPrefab, transform.position, Quaternion.identity);
+        }
+    }
 
-	//This will create a dialog window asking for which dialog to add
-	private void Reset()
+    //This will create a dialog window asking for which dialog to add
+    private void Reset()
 	{
 		Utils.Collider2DDialogWindow(this.gameObject, false);
 	}
@@ -70,6 +82,7 @@ public class DestroyForPointsAttribute : MonoBehaviour
 			if (health <= 0)
 			{
 				PlayDeathEffect();
+				SpawnRandomItem();
 				Destroy(gameObject);
 			}
 			

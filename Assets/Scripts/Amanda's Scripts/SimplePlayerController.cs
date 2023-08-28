@@ -66,26 +66,30 @@ namespace Controllers
             }
             transform.position += moveVelocity * movePower * Time.deltaTime;
         }
+
         void Jump()
         {
-            while ((Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0)
-            && !anim.GetBool("isJump"))
+            if (!isJumping && (Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0))
             {
                 isJumping = true;
                 anim.SetBool("isJump", true);
+
+                rb.velocity = Vector2.zero;
+
+                Vector2 jumpVelocity = new Vector2(0, jumpPower);
+                rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
             }
-            if (!isJumping)
-            {
-                return;
-            }
-
-            rb.velocity = Vector2.zero;
-
-            Vector2 jumpVelocity = new Vector2(0, jumpPower);
-            rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
-
-            isJumping = false;
         }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                isJumping = false;
+                anim.SetBool("isJump", false);
+            }
+        }
+
         void Attack()
         {
             if (Input.GetMouseButtonDown(0))

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4853161688787748}
   - component: {fileID: 198577694026796656}
   - component: {fileID: 199791615790011364}
+  - component: {fileID: 4094875028551598377}
   m_Layer: 0
   m_Name: P_Confetti_on_Destroy
   m_TagString: Untagged
@@ -4899,3 +4900,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4094875028551598377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728291793021082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8862ea7b10c84421c9485c36f04335a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestruction: 2

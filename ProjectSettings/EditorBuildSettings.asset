@@ -16,17 +16,21 @@ EditorBuildSettings:
     guid: 78bb09e1069df84468152c2df482eec7
   - enabled: 1
     path: Assets/Scenes/LairSweetLair.unity
-    guid: 38f477f67fcc7a941bc44ef6d011c895
+    guid: 62071553a50b9074dba3d3c1b2859bae
   - enabled: 1
     path: Assets/Scenes/BouncyParty.unity
     guid: ace4effab9288224da57743453adff2d
   - enabled: 1
+    path: Assets/Scenes/FancyParty.unity
+    guid: 3e16c83dce15c4a4ebc18d7ff4e2fbde
+  - enabled: 1
+    path: Assets/Scenes/RaveParty.unity
+    guid: a50ec4e5f1809124aafc82cb85d92ff7
+  - enabled: 1
     path: Assets/Scenes/LevelSummary.unity
     guid: 5d8dbc89fc124b14ca7df84486c1cff3
-  - enabled: 1
-    path: Assets/Scenes/FancyParty.unity
-    guid: 0eb57a220294a25499eaeaf688a86444
   - enabled: 0
     path: Assets/Scenes/LevelSummaryFancyParty.unity
     guid: d6c5632f4c4451442bf3cadb1afa81ec
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 6064c9be122cd93418549941e23d8af0, type: 2}

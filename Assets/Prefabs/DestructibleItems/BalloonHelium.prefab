@@ -56,7 +56,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2632290557206693463}
   - component: {fileID: 8466720543448767162}
-  - component: {fileID: 7808047314223227984}
   m_Layer: 0
   m_Name: HitBox
   m_TagString: Hittable
@@ -124,19 +123,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &7808047314223227984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2432991578111261426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4564695bcf528554bb32f35da1873e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toInform: {fileID: 0}
 --- !u!1 &3894959662207174313
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c4adaf25c56477b836b81ad48e3bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 20
   pointsWorth: 1
+  deathEffectPrefab: {fileID: 0}
 --- !u!114 &-9015994034393163365
 MonoBehaviour:
   m_ObjectHideFlags: 0
