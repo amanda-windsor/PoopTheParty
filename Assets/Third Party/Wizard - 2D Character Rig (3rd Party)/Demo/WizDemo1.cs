@@ -17,9 +17,9 @@ namespace ClearSky
 
         void ResetAnimation()
         {
+            anim.SetBool("isLookUp", false);
             anim.SetBool("isRun", false);
             anim.SetBool("isJump", false);
-            anim.SetBool("isAttack", false);
         }
         public void Idle()
         {
@@ -29,7 +29,27 @@ namespace ClearSky
         public void Attack()
         {
             ResetAnimation();
-            anim.SetBool("isAttack", true);
+            anim.SetTrigger("attack");
+        }
+        public void TripOver()
+        {
+            ResetAnimation();
+            anim.SetTrigger("tripOver");
+        }
+        public void Hurt()
+        {
+            ResetAnimation();
+            anim.SetTrigger("hurt");
+        }
+        public void Die()
+        {
+            ResetAnimation();
+            anim.SetTrigger("die");
+        }
+        public void LookUp()
+        {
+            ResetAnimation();
+            anim.SetBool("isLookUp", true);
         }
         public void Run()
         {

@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Concurrent;
+using UnityEngine;
 
-namespace Controllers
+namespace ClearSky
 {
     public class SimplePlayerController : MonoBehaviour
     {
         public float movePower = 10f;
-        public float jumpPower = 20f; //Set Gravity Scale in Rigidbody2D Component to 5
+        public float jumpPower = 15f; //Set Gravity Scale in Rigidbody2D Component to 5
 
         private Rigidbody2D rb;
         private Animator anim;
@@ -27,9 +28,12 @@ namespace Controllers
             Restart();
             if (alive)
             {
+                Hurt();
+                Die();
                 Attack();
                 Jump();
                 Run();
+
             }
         }
         private void OnTriggerEnter2D(Collider2D other)
@@ -66,38 +70,60 @@ namespace Controllers
             }
             transform.position += moveVelocity * movePower * Time.deltaTime;
         }
-
         void Jump()
         {
-            if (!isJumping && (Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0))
+            if ((Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0)
+            && !anim.GetBool("isJump"))
             {
                 isJumping = true;
                 anim.SetBool("isJump", true);
-
-                rb.velocity = Vector2.zero;
-
-                Vector2 jumpVelocity = new Vector2(0, jumpPower);
-                rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
             }
-        }
-
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Ground"))
+            if (!isJumping)
             {
-                isJumping = false;
-                anim.SetBool("isJump", false);
+                return;
             }
-        }
 
+            rb.velocity = Vector2.zero;
+
+            Vector2 jumpVelocity = new Vector2(0, jumpPower);
+            rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
+
+            isJumping = false;
+        }
         void Attack()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                anim.SetTrigger("Attack");
+                anim.SetTrigger("attack");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                anim.SetTrigger("attack");
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+            {
+                anim.SetTrigger("attack");
             }
         }
-        
+        void Hurt()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                anim.SetTrigger("hurt");
+                if (direction == 1)
+                    rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
+                else
+                    rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
+            }
+        }
+        void Die()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                anim.SetTrigger("die");
+                alive = false;
+            }
+        }
         void Restart()
         {
             if (Input.GetKeyDown(KeyCode.Alpha0))
